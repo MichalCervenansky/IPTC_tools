@@ -8,7 +8,7 @@ print("Load model")
 module = hub.KerasLayer("https://tfhub.dev/google/bit/m-r152x4/imagenet21k_classification/1")
 print("Model loaded")
 
-image = convert_image("img_23.jpg").reshape(1, 224, 224, 3)  # A batch of images with shape [batch_size, height, width, 3].
+image = convert_image("img.jpg")  # A batch of images with shape [batch_size, height, width, 3].
 logits = module(image)  # Logits with shape [batch_size, 21843].
 probabilities = tf.nn.softmax(logits)
 
